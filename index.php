@@ -1,13 +1,5 @@
 <?php include_once 'header.php'; ?>
 
-
-
-
-
-
-
-
-
 <section class="main-container">
   <div class="main-wrapper">
     <h2>Duduji login system</h2>
@@ -31,8 +23,7 @@
               while ($rowImg = mysqli_fetch_assoc($resultImg)) {
                 echo "<div>";
                   if ($rowImg['status'] == 1) {
-                    $sessionid = $_SESSION['u_id'];
-                    $filename = "uploads/profile".$sessionid."*";
+                    $filename = "uploads/profile".$userid."*";
                     $fileinfo = glob($filename);
                     $fileactualext = explode(".", $fileinfo[0])[1];
                     echo "<img class='profile-img' src='uploads/profile".$uid.".".$fileactualext."?".mt_rand()."'>";
